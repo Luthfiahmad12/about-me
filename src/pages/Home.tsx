@@ -1,5 +1,10 @@
 import { ProfileData } from '../utils/data'
-import { FaLinkedinIn, FaRegEnvelope, FaWhatsapp } from 'react-icons/fa6'
+import {
+    FaLinkedinIn,
+    FaRegEnvelope,
+    FaWhatsapp,
+    FaGithub,
+} from 'react-icons/fa6'
 import WorkExperiencesPage from '../components/partials/Experience'
 import EducationsPage from '../components/partials/Education'
 export default function Home() {
@@ -66,6 +71,17 @@ export default function Home() {
                             className="text-sm text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-none focus:decoration-2"
                         >
                             {social.wa}
+                        </a>
+                    </li>
+                    <li className="flex items-center gap-x-2.5">
+                        <FaGithub className="size-5 text-gray-600" />
+                        <a
+                            href={`https://github.com/${social.github}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-none focus:decoration-2"
+                        >
+                            {social.github}
                         </a>
                     </li>
                 </ul>

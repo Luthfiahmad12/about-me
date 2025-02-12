@@ -16,6 +16,7 @@ interface dataType {
     social: {
         linkedin: string
         wa: string
+        github: string
     }
 }
 
@@ -28,6 +29,7 @@ export const ProfileData: dataType = {
     social: {
         linkedin: 'luthfi-afif12',
         wa: '+6282138682214',
+        github: 'Luthfiahmad12',
     },
 }
 
