@@ -1,5 +1,4 @@
 import { FaHeart } from 'react-icons/fa6'
-import { FaCoffee } from 'react-icons/fa'
 
 export default function Footer() {
     const curentYear = new Date().getFullYear()
@@ -12,9 +11,7 @@ export default function Footer() {
                     </p>
                     <p className="text-sm text-gray-600">
                         Build with{' '}
-                        <FaHeart className="w-4 h-4 inline-block text-red-500" />
-                        {' and'}
-                        <FaCoffee className="w-4 h-4 inline-block text-red-500" />
+                        <FaHeart className="w-4 h-4 inline-block text-gray-800" />
                     </p>
                 </div>
             </div>
