@@ -5,12 +5,12 @@ export default function Footer() {
     const curentYear = new Date().getFullYear()
     return (
         <footer className="mt-4 w-full max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="py-6 border-t border-gray-200 dark:border-neutral-700">
+            <div className="py-6 border-t border-gray-200">
                 <div className="relative flex justify-between items-center">
-                    <p className="text-sm text-gray-600 dark:text-neutral-400">
+                    <p className="text-sm text-gray-600">
                         © {curentYear} Achmad Luthfi Afif.
                     </p>
-                    <p className="text-sm text-gray-600 dark:text-neutral-400">
+                    <p className="text-sm text-gray-600">
                         Build with{' '}
                         <FaHeart className="w-4 h-4 inline-block text-red-500" />
                         {' and'}

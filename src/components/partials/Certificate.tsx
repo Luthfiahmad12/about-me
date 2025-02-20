@@ -8,7 +8,7 @@ export default function Certificate() {
                     <div key={index}>
                         <a href={item.link} target="blank">
                             <div
-                                className={`relative group w-auto h-auto p-4 border border-gray-200 rounded-lg dark:border-neutral-700 shadow shadow-sm ${
+                                className={`relative group w-auto h-auto p-4 border border-gray-200 rounded-lg shadow shadow-sm ${
                                     item.link
                                         ? 'hover:shadow-lg hover:border-gray-300'
                                         : 'cursor-not-allowed'
@@ -23,11 +23,11 @@ export default function Certificate() {
                                     className="w-24 mb-3 text-gray-600"
                                 />
                                 {/* nama */}
-                                <p className="font-semibold text-base text-gray-800 dark:text-neutral-200 hover:text-gray-600">
+                                <p className="font-semibold text-base text-gray-800 hover:text-gray-600">
                                     {item.name}
                                 </p>
                                 {/* penyelenggara */}
-                                <p className="mt-1 text-base text-gray-600 dark:text-neutral-400">
+                                <p className="mt-1 text-base text-gray-600">
                                     {item.organizer}
                                 </p>
                                 {/* Hover Overlay */}

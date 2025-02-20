@@ -5,7 +5,7 @@ import { Works } from '../../utils/data'
 export default function WorkExperiencesPage() {
     return (
         <div className="mt-10 sm:mt-14">
-            <h2 className="mb-5 font-bold text-lg text-gray-800 dark:text-neutral-200">
+            <h2 className="mb-5 font-bold text-lg text-gray-800">
                 Work experience
             </h2>
 

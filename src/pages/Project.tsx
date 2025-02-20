@@ -18,9 +18,7 @@ export default function ProjectPage() {
 
     return (
         <>
-            <h2 className="font-bold text-lg text-gray-800 dark:text-neutral-200">
-                Projects
-            </h2>
+            <h2 className="font-bold text-lg text-gray-800">Projects</h2>
             <span className="text-gray-600 text-sm mb-5">
                 Here are some projects I've worked on
             </span>
