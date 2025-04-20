@@ -110,21 +110,6 @@ export const Works: workItemProps[] = [
 
 export const EducationsItems: educationItem[] = [
     {
-        periode: '2007-2013',
-        university: 'SD N Damarkasiyan',
-    },
-    {
-        link: 'https://smpn1kertekwonosobo.com',
-        periode: '2013-2016',
-        university: 'SMP N 1 Kertek',
-    },
-    {
-        link: 'https://sma2wsb.sch.id',
-        periode: '2016-2019',
-        major: 'Matematika dan Ilmu Pengetahuan Alam',
-        university: 'SMA N 2 Wonosobo',
-    },
-    {
         link: 'https://unsiq.ac.id',
         periode: '2019-2023',
         major: 'D-III Manajemen Informatika - IPK 3.76',
