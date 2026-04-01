@@ -23,7 +23,7 @@ interface dataType {
 export const ProfileData: dataType = {
     img: me,
     name: 'Achmad Luthfi Afif',
-    title: 'web developer',
+    title: 'Software Engineer',
     desc: 'Saya merupakan lulusan Program Studi Manajemen Informatika dengan pengalaman dalam pengembangan aplikasi web serta keterampilan sebagai Full Stack Developer dari tahun 2020, menguasai tech stack frontend modern dan backend PHP. Antusias dalam mempelajari teknologi baru seperti modern Javasvript, modern PHP, dan artificial intelligence. Berambisi berkarier sebagai IT Developer yang mampu memberikan solusi efektif bagi perusahaan.',
     email: 'luthfiafif625@gmail.com ',
     social: {
@@ -90,8 +90,16 @@ export const ProjectList: Project[] = [
 
 export const Works: workItemProps[] = [
     {
+        name: 'PT Adarma Multi Digital',
+        periode: 'Juni 2025 - Sekarang',
+        tasks: [
+            'IT Project Manager (Palnning, Develop, Deployment) dalam pembuatan produk aplikasi berbasis website',
+            'Mengembangkan aplikasi web berbasis backend PHP (Laravel Framework) dan frontend modern',
+        ],
+    },
+    {
         name: 'Freelance Web Developer',
-        periode: '2022 - Present',
+        periode: 'Desember 2022 - Sekarang',
         tasks: [
             'Mengembangkan aplikasi web menggunakan teknologi modern frontend (React.js) dan backend (Laravel PHP) sesuai dengan kebutuhan klien',
             'Penulisan clean code dan struktur data menggunakan pendekatan Repository Pattern dan Design Pattern',
