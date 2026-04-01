@@ -12,7 +12,7 @@ export default function WorkExperiencesPage() {
             {/* list experience */}
             <WorkList
                 lists={Works}
-                listIcon={[<FaLaptopCode />, <FaBuildingWheat />]}
+                listIcon={[<FaLaptopCode />, <FaBuildingWheat />, <FaLaptopCode />]}
             />
         </div>
     )
