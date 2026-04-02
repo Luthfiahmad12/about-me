@@ -93,7 +93,7 @@ export const Works: workItemProps[] = [
         name: 'PT Adarma Multi Digital',
         periode: 'Juni 2025 - Sekarang',
         tasks: [
-            'IT Project Manager (Palnning, Develop, Deployment) dalam pembuatan produk aplikasi berbasis website',
+            'IT Programmer (Palnning, Develop, Deployment) dalam pembuatan produk aplikasi berbasis website',
             'Mengembangkan aplikasi web berbasis backend PHP (Laravel Framework) dan frontend modern',
         ],
     },
