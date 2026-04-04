@@ -1,5 +1,5 @@
-import clsx from 'clsx'
-import { useEffect, useState } from 'react'
+import clsx from "clsx"
+import { useEffect, useState } from "react"
 
 interface ModalProps {
     isOpen: boolean
@@ -22,31 +22,39 @@ const Modal: React.FC<ModalProps> = ({
         if (isOpen) {
             setTransition(true)
         } else {
-            const timer = setTimeout(() => setTransition(false), 300) // sesuaikan dengan durasi transisi
+            const timer = setTimeout(() => setTransition(false), 300)
             return () => clearTimeout(timer)
         }
     }, [isOpen])
 
+    const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (e.target === e.currentTarget) {
+            onClose()
+        }
+    }
+
     return (
         <div
+            onClick={handleOverlayClick}
             className={clsx(
-                'fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 transition-opacity duration-300',
+                "fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 transition-opacity duration-300",
                 {
-                    'opacity-100': transition,
-                    'opacity-0 pointer-events-none': !transition,
-                }
+                    "opacity-100": transition,
+                    "opacity-0 pointer-events-none": !transition,
+                },
             )}
         >
             <div
                 className={clsx(
-                    'bg-white rounded-lg shadow-lg transform transition-transform duration-300 w-11/12 max-w-sm md:max-w-md lg:max-w-lg',
+                    "bg-white rounded-lg shadow-lg transform transition-transform duration-300 w-11/12 max-w-sm md:max-w-md lg:max-w-lg",
                     {
-                        'scale-100': transition,
-                        'scale-90': !transition,
+                        "scale-100": transition,
+                        "scale-90": !transition,
                     },
-                    className
+                    className,
                 )}
             >
+                {/* Sisanya sama... */}
                 <div className="flex justify-between items-center p-4">
                     <h2 className="text-lg font-bold capitalize">{title}</h2>
                     <button

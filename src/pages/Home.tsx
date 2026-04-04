@@ -1,12 +1,12 @@
-import { ProfileData } from '../utils/data'
+import { ProfileData } from "../utils/data"
 import {
     FaLinkedinIn,
     FaRegEnvelope,
     FaWhatsapp,
     FaGithub,
-} from 'react-icons/fa6'
-import WorkExperiencesPage from '../components/partials/Experience'
-import EducationsPage from '../components/partials/Education'
+} from "react-icons/fa6"
+import WorkExperiencesPage from "../components/partials/Experience"
+import EducationsPage from "../components/partials/Education"
 export default function Home() {
     const { img, name, title, email, desc, social } = ProfileData
 
@@ -34,7 +34,7 @@ export default function Home() {
 
             {/* desc */}
             <div className="mt-8 font-medium">
-                <p className="text-md text-gray-600 text-justify">{desc}</p>
+                <p className="text-base text-gray-600 text-justify">{desc}</p>
                 <ul className="mt-5 flex flex-col gap-y-3">
                     <li className="flex items-center gap-x-2.5">
                         <FaRegEnvelope className="size-5 text-gray-600" />
@@ -64,7 +64,7 @@ export default function Home() {
                             href={`https://wa.me/${
                                 social.wa
                             }?text=${encodeURIComponent(
-                                'Halo, saya ingin bekerja sama dengan anda.'
+                                "Halo, saya ingin bekerja sama dengan anda.",
                             )}`}
                             target="_blank"
                             rel="noopener noreferrer"

@@ -1,82 +1,74 @@
-import { FaLaravel } from 'react-icons/fa6'
-import vitelogo from '../../assets/vite.png'
-import { ListTechStack } from '../List'
+import {
+    FaBootstrap,
+    FaCss3Alt,
+    FaGitAlt,
+    FaHtml5,
+    FaJs,
+    FaLaravel,
+    FaNodeJs,
+    FaPhp,
+    FaReact,
+} from "react-icons/fa6"
+import { ListTechStack } from "../List"
+import { VscVscode } from "react-icons/vsc"
+import { SiVite } from "react-icons/si"
+import { RiTailwindCssFill } from "react-icons/ri"
 
 export default function TechStack() {
     const technologies = [
         {
-            name: 'HTML',
-            icon: (
-                <img src="https://devicon-website.vercel.app/api/html5/plain.svg?color=%234B5563" />
-            ),
+            name: "HTML",
+            icon: <FaHtml5 />,
         },
         {
-            name: 'CSS',
-            icon: (
-                <img src="https://devicon-website.vercel.app/api/css3/plain.svg?color=%234B5563" />
-            ),
+            name: "CSS",
+            icon: <FaCss3Alt />,
         },
         {
-            name: 'PHP',
-            icon: (
-                <img src="https://devicon-website.vercel.app/api/php/plain.svg?color=%234B5563" />
-            ),
+            name: "PHP",
+            icon: <FaPhp />,
         },
         {
-            name: 'Javascript',
-            icon: (
-                <img src="https://devicon-website.vercel.app/api/javascript/plain.svg?color=%234B5563" />
-            ),
+            name: "Javascript",
+            icon: <FaJs />,
         },
     ]
 
     const frameworks = [
         {
-            name: 'Tailwind CSS',
-            icon: (
-                <img src="https://devicon-website.vercel.app/api/tailwindcss/plain.svg?color=%234B5563" />
-            ),
+            name: "Tailwind CSS",
+            icon: <RiTailwindCssFill />,
         },
         {
-            name: 'Bootstrap CSS',
-            icon: (
-                <img src="https://devicon-website.vercel.app/api/bootstrap/plain.svg?color=%234B5563" />
-            ),
+            name: "Bootstrap CSS",
+            icon: <FaBootstrap />,
         },
         {
-            name: 'Laravel',
+            name: "Laravel",
             icon: <FaLaravel />,
         },
         {
-            name: 'React JS',
-            icon: (
-                <img src="https://devicon-website.vercel.app/api/react/original.svg?color=%234B5563" />
-            ),
+            name: "React JS",
+            icon: <FaReact />,
         },
         {
-            name: 'Node JS',
-            icon: (
-                <img src="https://devicon-website.vercel.app/api/nodejs/plain.svg?color=%234B5563" />
-            ),
+            name: "Node JS",
+            icon: <FaNodeJs />,
         },
     ]
 
     const tools = [
         {
-            name: 'VS Code',
-            icon: (
-                <img src="https://devicon-website.vercel.app/api/vscode/plain.svg?color=%234B5563" />
-            ),
+            name: "VS Code",
+            icon: <VscVscode />,
         },
         {
-            name: 'Vite',
-            icon: <img src={vitelogo} />,
+            name: "Vite",
+            icon: <SiVite />,
         },
         {
-            name: 'Git',
-            icon: (
-                <img src="https://devicon-website.vercel.app/api/git/plain.svg?color=%234B5563" />
-            ),
+            name: "Git",
+            icon: <FaGitAlt />,
         },
     ]
 

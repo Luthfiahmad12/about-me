@@ -1,6 +1,6 @@
-import { FaBuildingWheat, FaLaptopCode } from 'react-icons/fa6'
-import { WorkList } from '../List'
-import { Works } from '../../utils/data'
+import { FaBuildingWheat, FaLaptopCode } from "react-icons/fa6"
+import { WorkList } from "../List"
+import { Works } from "../../utils/data"
 
 export default function WorkExperiencesPage() {
     return (
@@ -12,7 +12,11 @@ export default function WorkExperiencesPage() {
             {/* list experience */}
             <WorkList
                 lists={Works}
-                listIcon={[<FaLaptopCode />, <FaBuildingWheat />, <FaLaptopCode />]}
+                listIcon={[
+                    <FaLaptopCode />,
+                    <FaBuildingWheat />,
+                    <FaLaptopCode />,
+                ]}
             />
         </div>
     )

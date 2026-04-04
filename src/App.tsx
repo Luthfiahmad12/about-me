@@ -1,6 +1,6 @@
-import Footer from './components/partials/Footer'
-import Header from './components/partials/Header'
-import AppRoutes from './routes'
+import Footer from "./components/partials/Footer"
+import Header from "./components/partials/Header"
+import AppRoutes from "./routes"
 
 export default function App() {
     return (
