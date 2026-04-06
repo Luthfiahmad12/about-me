@@ -67,7 +67,7 @@ export const ProjectList: Project[] = [
         image: ppob,
         name: "DarmaPay Platform",
         description:
-            "Platform Paymant Point Online Bank (PPOB) untuk palaku usaha UMKM, Ssitem pembayaran digital lengkap dengan margin yang menugntungkan",
+            "Platform Paymant Point Online Bank (PPOB) untuk pelaku usaha UMKM, Sistem pembayaran digital lengkap dengan margin yang menguntungkan",
         status: true,
     },
     {
