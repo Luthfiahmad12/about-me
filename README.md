@@ -1,47 +1,79 @@
-<div align="center">
-<img alt="Portfolio" src="https://github.com/dillionverma/portfolio/assets/16860528/57ffca81-3f0a-4425-b31d-094f61725455" width="90%">
-</div>
+# Achmad Luthfi Afif — Personal Portfolio & Resume
 
-# Portfolio [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fdillionverma%2Fportfolio)
+Portofolio web pribadi & resume interaktif milik **Achmad Luthfi Afif** (Software Engineer & Full-Stack Developer). Dibangun dengan teknologi **Next.js 16**, **React**, **TypeScript**, **Tailwind CSS**, **Shadcn UI**, dan **Magic UI**.
 
-Built with next.js, [shadcn/ui](https://ui.shadcn.com/), and [magic ui](https://magicui.design/), deployed on Vercel.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FLuthfiahmad12%2Fabout-me)
 
-# Features
+---
 
-- Setup only takes a few minutes by editing the [single config file](./src/data/resume.tsx)
-- Built using Next.js 14, React, Typescript, Shadcn/UI, TailwindCSS, Framer Motion, Magic UI
-- Includes a blog
-- Responsive for different devices
-- Optimized for Next.js and Vercel
+## 🚀 Fitur Utama
 
-# Getting Started Locally
+- 🇮🇩 **Bahasa Indonesia 100%**: Bahasa dan format tanggal (`id-ID`) yang seragam di seluruh halaman.
+- ⚡ **SEO & Performance Komprehensif**:
+  - Generator otomatis `sitemap.ts` & `robots.ts` Next.js App Router.
+  - Integration `JSON-LD Schema.org` (`Person` & `WebSite`) untuk Rich Snippet Google.
+  - Dynamic OpenGraph & Twitter Card Metadata.
+- 🎨 **Ikon Teknologi SVG Presisi**: Menggunakan vektor SVG resmi untuk Laravel, PHP, JavaScript, Tailwind CSS, Gin Framework (Gopher), Vue.js, Flutter, Go, React, dan Next.js.
+- 💼 **Modular Static Data**: Manajemen data profil, pengalaman kerja, pendidikan, sertifikasi, keahlian, dan proyek melalui direktori `src/data/`.
+- 📱 **Desain Responsif & Premium**: Tampilan optimal untuk smartphone, tablet, maupun desktop.
+- 🌙 **Dukungan Tema Mode Gelap / Terang**: Pergantian tema visual yang mulus (*Theme Switcher*).
 
-1. Clone this repository to your local machine:
+---
 
+## 🛠️ Teknologi & Tools
+
+- **Framework**: [Next.js 16 (App Router)](https://nextjs.org/)
+- **Bahasa**: [TypeScript](https://www.typescriptlang.org/) & [React 19](https://react.dev/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **UI Components**: [Shadcn UI](https://ui.shadcn.com/) & [Magic UI](https://magicui.design/)
+- **Icons**: [Lucide Icons](https://lucide.dev/) & Custom Tech SVGs
+- **Deployment**: [Vercel](https://vercel.com/)
+
+---
+
+## 💻 Jalankan Lokal (Getting Started)
+
+1. **Clone repository ini**:
    ```bash
-   git clone https://github.com/dillionverma/portfolio
+   git clone https://github.com/Luthfiahmad12/about-me.git
    ```
 
-2. Move to the cloned directory
-
+2. **Masuk ke direktori proyek**:
    ```bash
-   cd portfolio
+   cd about-me
    ```
 
-3. Install dependencies:
-
+3. **Install dependensi**:
    ```bash
    npm install
    ```
 
-4. Start the local Server:
-
+4. **Jalankan development server**:
    ```bash
    npm run dev
    ```
 
-5. Open the [Config file](./src/data/resume.tsx) and make changes
+5. **Buka di browser**:
+   Buka [http://localhost:3000](http://localhost:3000) pada browser Anda.
 
-# License
+---
 
-Licensed under the [MIT license](https://github.com/dillionverma/portfolio/blob/main/LICENSE.md).
+## 📂 Struktur Direktori Utama
+
+```text
+about-me/
+├── src/
+│   ├── app/                # Next.js App Router (Halaman & Metadata)
+│   ├── components/         # Komponen UI, Layout, dan Ikon SVG
+│   ├── data/               # Data Statis (Profil, Proyek, Pengalaman, Pendidikan, Sertifikat)
+│   ├── lib/                # Layanan Data & Utility Functions
+│   └── types/              # Definisi Tipe TypeScript
+├── public/                 # Aset Gambar, Logo, dan Font
+└── README.md
+```
+
+---
+
+## 📜 Lisensi
+
+Proyek ini dilindungi di bawah lisensi [MIT License](LICENSE).
