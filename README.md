@@ -1,29 +1,29 @@
 # Achmad Luthfi Afif — Personal Portfolio & Resume
 
-Portofolio web pribadi & resume interaktif milik **Achmad Luthfi Afif** (Software Engineer & Full-Stack Developer). Dibangun dengan teknologi **Next.js 16**, **React**, **TypeScript**, **Tailwind CSS**, **Shadcn UI**, dan **Magic UI**.
+A modern, interactive personal portfolio website & resume for **Achmad Luthfi Afif** (Software Engineer & Full-Stack Developer). Built with **Next.js 16**, **React 19**, **TypeScript**, **Tailwind CSS v4**, **Shadcn UI**, and **Magic UI**.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FLuthfiahmad12%2Fabout-me)
 
 ---
 
-## 🚀 Fitur Utama
+## Key Features
 
-- 🇮🇩 **Bahasa Indonesia 100%**: Bahasa dan format tanggal (`id-ID`) yang seragam di seluruh halaman.
-- ⚡ **SEO & Performance Komprehensif**:
-  - Generator otomatis `sitemap.ts` & `robots.ts` Next.js App Router.
-  - Integration `JSON-LD Schema.org` (`Person` & `WebSite`) untuk Rich Snippet Google.
-  - Dynamic OpenGraph & Twitter Card Metadata.
-- 🎨 **Ikon Teknologi SVG Presisi**: Menggunakan vektor SVG resmi untuk Laravel, PHP, JavaScript, Tailwind CSS, Gin Framework (Gopher), Vue.js, Flutter, Go, React, dan Next.js.
-- 💼 **Modular Static Data**: Manajemen data profil, pengalaman kerja, pendidikan, sertifikasi, keahlian, dan proyek melalui direktori `src/data/`.
-- 📱 **Desain Responsif & Premium**: Tampilan optimal untuk smartphone, tablet, maupun desktop.
-- 🌙 **Dukungan Tema Mode Gelap / Terang**: Pergantian tema visual yang mulus (*Theme Switcher*).
+- **Full Indonesian Localization**: Unified Bahasa Indonesia content and locale date formatting (`id-ID`).
+- **Comprehensive SEO & Performance**:
+  - Next.js App Router dynamic `sitemap.ts` and `robots.ts` generators.
+  - `JSON-LD Schema.org` (`Person` & `WebSite`) integration for rich search snippets.
+  - Dynamic OpenGraph and Twitter Card social preview cards.
+- **Official Tech SVG Icons**: High-quality vector icons for Laravel, PHP, JavaScript, Tailwind CSS, Gin Framework (Gopher), Vue.js, Flutter, Go, React, and Next.js.
+- **Modular Static Data**: Clean static data management for profile, work experience, education history, certificates, skills, and projects in `src/data/`.
+- **Responsive & Premium Design**: Mobile-first responsive layout tailored for all screen sizes.
+- **Dark & Light Theme**: Seamless theme toggling powered by `next-themes`.
 
 ---
 
-## 🛠️ Teknologi & Tools
+## Tech Stack & Tools
 
 - **Framework**: [Next.js 16 (App Router)](https://nextjs.org/)
-- **Bahasa**: [TypeScript](https://www.typescriptlang.org/) & [React 19](https://react.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/) & [React 19](https://react.dev/)
 - **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
 - **UI Components**: [Shadcn UI](https://ui.shadcn.com/) & [Magic UI](https://magicui.design/)
 - **Icons**: [Lucide Icons](https://lucide.dev/) & Custom Tech SVGs
@@ -31,49 +31,49 @@ Portofolio web pribadi & resume interaktif milik **Achmad Luthfi Afif** (Softwar
 
 ---
 
-## 💻 Jalankan Lokal (Getting Started)
+## Getting Started Locally
 
-1. **Clone repository ini**:
+1. **Clone this repository**:
    ```bash
    git clone https://github.com/Luthfiahmad12/about-me.git
    ```
 
-2. **Masuk ke direktori proyek**:
+2. **Navigate to the project directory**:
    ```bash
    cd about-me
    ```
 
-3. **Install dependensi**:
+3. **Install dependencies**:
    ```bash
    npm install
    ```
 
-4. **Jalankan development server**:
+4. **Start the local development server**:
    ```bash
    npm run dev
    ```
 
-5. **Buka di browser**:
-   Buka [http://localhost:3000](http://localhost:3000) pada browser Anda.
+5. **Open in browser**:
+   Navigate to [http://localhost:3000](http://localhost:3000) to view the website.
 
 ---
 
-## 📂 Struktur Direktori Utama
+## Project Directory Structure
 
 ```text
 about-me/
 ├── src/
-│   ├── app/                # Next.js App Router (Halaman & Metadata)
-│   ├── components/         # Komponen UI, Layout, dan Ikon SVG
-│   ├── data/               # Data Statis (Profil, Proyek, Pengalaman, Pendidikan, Sertifikat)
-│   ├── lib/                # Layanan Data & Utility Functions
-│   └── types/              # Definisi Tipe TypeScript
-├── public/                 # Aset Gambar, Logo, dan Font
+│   ├── app/                # Next.js App Router (Pages, Metadata, & Routes)
+│   ├── components/         # UI Components, Layout, & SVG Icons
+│   ├── data/               # Static Data (Profile, Projects, Experience, Education, Skills)
+│   ├── lib/                # Data Services & Utility Functions
+│   └── types/              # TypeScript Definitions
+├── public/                 # Static Assets, Images, Logos, & Fonts
 └── README.md
 ```
 
 ---
 
-## 📜 Lisensi
+## License
 
-Proyek ini dilindungi di bawah lisensi [MIT License](LICENSE).
+Licensed under the [MIT License](LICENSE).
