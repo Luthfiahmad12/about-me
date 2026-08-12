@@ -1,0 +1,68 @@
+import type { Skill } from "@/types/portfolio"
+
+export const SKILLS_DATA: Skill[] = [
+    {
+        id: 1,
+        name: "React",
+        category: "Frontend",
+        level: "Advanced",
+        icon_url: null,
+        created_at: "2024-01-01T00:00:00.000Z",
+    },
+    {
+        id: 2,
+        name: "Next.js",
+        category: "Frontend",
+        level: "Advanced",
+        icon_url: null,
+        created_at: "2024-01-01T00:00:00.000Z",
+    },
+    {
+        id: 3,
+        name: "TypeScript",
+        category: "Languages",
+        level: "Advanced",
+        icon_url: null,
+        created_at: "2024-01-01T00:00:00.000Z",
+    },
+    {
+        id: 4,
+        name: "Node.js",
+        category: "Backend",
+        level: "Intermediate",
+        icon_url: null,
+        created_at: "2024-01-01T00:00:00.000Z",
+    },
+    {
+        id: 5,
+        name: "Tailwind CSS",
+        category: "Styling",
+        level: "Advanced",
+        icon_url: null,
+        created_at: "2024-01-01T00:00:00.000Z",
+    },
+    {
+        id: 6,
+        name: "PostgreSQL",
+        category: "Database",
+        level: "Intermediate",
+        icon_url: null,
+        created_at: "2024-01-01T00:00:00.000Z",
+    },
+    {
+        id: 7,
+        name: "Docker",
+        category: "DevOps",
+        level: "Intermediate",
+        icon_url: null,
+        created_at: "2024-01-01T00:00:00.000Z",
+    },
+    {
+        id: 8,
+        name: "Python",
+        category: "Languages",
+        level: "Intermediate",
+        icon_url: null,
+        created_at: "2024-01-01T00:00:00.000Z",
+    },
+]

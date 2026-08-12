@@ -27,7 +27,8 @@ export default async function Page() {
         .toUpperCase()
 
     // Get first name
-    const firstName = profile.full_name.split(" ")[1]
+    const nameParts = profile.full_name.split(" ")
+    const firstName = nameParts.length > 1 ? nameParts[1] : nameParts[0]
 
     return (
         <main className="min-h-dvh flex flex-col gap-14 relative">

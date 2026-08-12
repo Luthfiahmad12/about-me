@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/accordion";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import type { Experience } from "@/lib/supabase";
+import type { Experience } from "@/types/portfolio";
 
 interface WorkSectionProps {
   experiences: Experience[];

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FlickeringGrid } from "@/components/magicui/flickering-grid";
-import type { Profile } from "@/lib/supabase";
+import type { Profile } from "@/types/portfolio";
 import { Github, Linkedin, Twitter, Instagram, Mail, Phone } from "lucide-react";
 
 interface ContactSectionProps {
