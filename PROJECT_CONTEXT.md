@@ -10,7 +10,7 @@ Personal portfolio website built with Next.js, fetching data dynamically from Su
 - **Animation:** Framer Motion (via Magic UI components)
 - **Database:** Supabase (PostgreSQL)
 - **Content:** MDX (content-collections) — saat ini tidak dipakai; blog dihapus dari app.
-- **Package Manager:** pnpm
+- **Package Manager:** npm
 
 ## Database Schema (Supabase)
 
@@ -208,13 +208,13 @@ NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY=your_supabase_key
 
 ```bash
 # Development
-pnpm dev
+npm run dev
 
 # Build
-pnpm build
+npm run build
 
 # Lint
-pnpm lint
+npm run lint
 ```
 
 ## Notes
