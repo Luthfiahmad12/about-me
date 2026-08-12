@@ -15,7 +15,7 @@ import { Csharp } from "@/components/ui/svgs/csharp"
 
 export const DATA = {
     name: "Achmad Luthfi Afif",
-    title: "Achmad Luthfi Afif - Software Engineer & Full-Stack Developer",
+    title: "About Me",
     initials: "ALA",
     url: "https://luthfi-cv.vercel.app",
     location: "Wonosobo, Jawa Tengah, Indonesia",
