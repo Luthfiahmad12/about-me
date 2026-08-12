@@ -21,13 +21,13 @@ export async function generateMetadata({ params }: ProjectPageProps) {
 
     if (!project) {
         return {
-            title: "Project Not Found",
+            title: "Proyek Tidak Ditemukan",
         }
     }
 
     return {
-        title: `${project.title} | Projects`,
-        description: project.description || `Details about ${project.title}`,
+        title: `${project.title} | Proyek`,
+        description: project.description || `Detail proyek ${project.title}`,
     }
 }
 
@@ -39,10 +39,10 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         notFound()
     }
 
-    // Format date untuk ditampilkan
+    // Format date untuk ditampilkan dalam Bahasa Indonesia
     const formatDate = (dateString: string) => {
         const date = new Date(dateString)
-        return date.toLocaleDateString("en-US", {
+        return date.toLocaleDateString("id-ID", {
             year: "numeric",
             month: "long",
             day: "numeric",
@@ -58,7 +58,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                 <Link href="/projects">
                     <Button variant="ghost" size="sm" className="gap-2 -ml-2">
                         <ArrowLeft className="h-4 w-4" />
-                        Back to Projects
+                        Kembali ke Proyek
                     </Button>
                 </Link>
             </BlurFade>
@@ -69,7 +69,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                     <div className="flex flex-wrap items-center gap-2">
                         {project.is_featured && (
                             <Badge variant="default" className="bg-primary">
-                                Featured
+                                Unggulan
                             </Badge>
                         )}
                         <time className="text-sm text-muted-foreground">
@@ -86,7 +86,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
 
                 {project.description && (
                     <BlurFade delay={BLUR_FADE_DELAY * 4}>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
+                        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
                             {project.description}
                         </p>
                     </BlurFade>
@@ -103,7 +103,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                             >
                                 <Button className="gap-2">
                                     <Globe className="h-4 w-4" />
-                                    Live Demo
+                                    Demo Langsung
                                     <ExternalLink className="h-3 w-3 ml-1" />
                                 </Button>
                             </a>
@@ -116,7 +116,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                             >
                                 <Button variant="outline" className="gap-2">
                                     <Github className="h-4 w-4" />
-                                    View Code
+                                    Lihat Kode
                                     <ExternalLink className="h-3 w-3 ml-1" />
                                 </Button>
                             </a>
@@ -142,13 +142,13 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             {project.tech_stack && project.tech_stack.length > 0 && (
                 <BlurFade delay={BLUR_FADE_DELAY * 7}>
                     <div className="flex flex-col gap-3">
-                        <h2 className="text-lg font-semibold">Tech Stack</h2>
+                        <h2 className="text-lg sm:text-xl font-bold tracking-tight">Teknologi yang Digunakan</h2>
                         <div className="flex flex-wrap gap-2">
                             {project.tech_stack.map((tech) => (
                                 <Badge
                                     key={tech}
                                     variant="outline"
-                                    className="text-sm px-3 py-1"
+                                    className="text-xs sm:text-sm px-3 py-1 font-medium"
                                 >
                                     {tech}
                                 </Badge>
@@ -161,7 +161,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             {/* Project Content */}
             {project.content && (
                 <BlurFade delay={BLUR_FADE_DELAY * 8}>
-                    <div className="prose dark:prose-invert max-w-none">
+                    <div className="prose dark:prose-invert max-w-none text-sm sm:text-base leading-relaxed">
                         <Markdown>{project.content}</Markdown>
                     </div>
                 </BlurFade>

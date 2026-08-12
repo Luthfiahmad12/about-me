@@ -15,12 +15,13 @@ import { Csharp } from "@/components/ui/svgs/csharp"
 
 export const DATA = {
     name: "Achmad Luthfi Afif",
-    initials: "A",
-    url: "http://luthfi-cv.vercel.app",
-    location: "San Francisco, CA",
-    locationLink: "https://www.google.com/maps/place/sanfrancisco",
+    title: "Achmad Luthfi Afif - Software Engineer & Full-Stack Developer",
+    initials: "ALA",
+    url: "https://luthfi-cv.vercel.app",
+    location: "Wonosobo, Jawa Tengah, Indonesia",
+    locationLink: "https://www.google.com/maps/place/Wonosobo",
     description:
-        "Software Engineer turned Entrepreneur. I love building things and helping people. Very active on Twitter.",
+        "Portfolio & Resume of Achmad Luthfi Afif - Software Engineer and Full-Stack Developer specializing in Next.js, React, Laravel, TypeScript, Go, and Web Development.",
     summary:
         "At the end of 2022, I quit my job as a software engineer to go fulltime into building and scaling my own SaaS businesses. In the past, [I pursued a double degree in computer science and business](/#education), [interned at big tech companies in Silicon Valley](https://www.youtube.com/watch?v=d-LJ2e5qKdE), and [competed in over 21 hackathons for fun](/#hackathons). I also had the pleasure of being a part of the first ever in-person cohort of buildspace called [buildspace sf1](https://buildspace.so/sf1).",
     avatarUrl: "/me.png",
@@ -103,15 +104,15 @@ export const DATA = {
             start: "2016",
             end: "2021",
         },
-            {
-                school: "International Baccalaureate",
-                href: "https://ibo.org",
-                degree: "IB Diploma",
-                logoUrl: "/ib.png",
-                start: "2012",
-                end: "2016",
-            },
-        ],
+        {
+            school: "International Baccalaureate",
+            href: "https://ibo.org",
+            degree: "IB Diploma",
+            logoUrl: "/ib.png",
+            start: "2012",
+            end: "2016",
+        },
+    ],
     projects: [] as {
         title: string
         href: string

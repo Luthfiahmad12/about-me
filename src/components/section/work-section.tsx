@@ -1,13 +1,11 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
-import { useState } from "react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { ChevronDown, ChevronRight } from "lucide-react";
+import { ChevronDown, ChevronRight, Code2, Laptop, Terminal, Monitor } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Experience } from "@/types/portfolio";
 
@@ -15,36 +13,41 @@ interface WorkSectionProps {
   experiences: Experience[];
 }
 
-function LogoImage({ src, alt }: { src: string | null; alt: string }) {
-  const [imageError, setImageError] = useState(false);
+function getWorkIcon(companyName: string, role: string) {
+  const lowerCompany = companyName.toLowerCase();
+  const lowerRole = role.toLowerCase();
 
-  if (!src || imageError) {
-    return (
-      <div className="size-8 md:size-10 p-1 border rounded-full shadow ring-2 ring-border bg-muted flex-none" />
-    );
+  if (lowerCompany.includes("adarma") || lowerRole.includes("programmer")) {
+    return <Code2 className="size-4 sm:size-5 text-primary" />;
   }
+  if (lowerCompany.includes("freelance") || lowerRole.includes("full stack")) {
+    return <Terminal className="size-4 sm:size-5 text-primary" />;
+  }
+  if (lowerCompany.includes("support") || lowerRole.includes("support")) {
+    return <Monitor className="size-4 sm:size-5 text-primary" />;
+  }
+  return <Laptop className="size-4 sm:size-5 text-primary" />;
+}
 
+function WorkIconBadge({ companyName, role }: { companyName: string; role: string }) {
   return (
-    <img
-      src={src}
-      alt={alt}
-      className="size-8 md:size-10 p-1 border rounded-full shadow ring-2 ring-border overflow-hidden object-contain flex-none"
-      onError={() => setImageError(true)}
-    />
+    <div className="size-9 md:size-10 rounded-full border border-primary/20 bg-primary/10 flex items-center justify-center flex-none shadow-sm">
+      {getWorkIcon(companyName, role)}
+    </div>
   );
 }
 
 function formatDate(dateString: string | null): string {
-  if (!dateString) return "Present";
+  if (!dateString) return "Sekarang";
   const date = new Date(dateString);
-  return date.toLocaleDateString("en-US", { month: "short", year: "numeric" });
+  return date.toLocaleDateString("id-ID", { month: "short", year: "numeric" });
 }
 
 export default function WorkSection({ experiences }: WorkSectionProps) {
   if (experiences.length === 0) {
     return (
       <div className="text-muted-foreground text-sm">
-        No work experience added yet.
+        Belum ada pengalaman kerja yang ditambahkan.
       </div>
     );
   }
@@ -60,9 +63,9 @@ export default function WorkSection({ experiences }: WorkSectionProps) {
           <AccordionTrigger className="hover:no-underline p-0 cursor-pointer transition-colors rounded-none group [&>svg]:hidden">
             <div className="flex items-center gap-x-3 justify-between w-full text-left">
               <div className="flex items-center gap-x-3 flex-1 min-w-0">
-                <LogoImage src={null} alt={work.company_name} />
+                <WorkIconBadge companyName={work.company_name} role={work.role} />
                 <div className="flex-1 min-w-0 gap-0.5 flex flex-col">
-                  <div className="font-semibold leading-none flex items-center gap-2">
+                  <div className="font-semibold leading-none flex items-center gap-2 text-sm sm:text-base">
                     {work.company_name}
                     <span className="relative inline-flex items-center w-3.5 h-3.5">
                       <ChevronRight
@@ -82,20 +85,20 @@ export default function WorkSection({ experiences }: WorkSectionProps) {
                       />
                     </span>
                   </div>
-                  <div className="font-sans text-sm text-muted-foreground">
+                  <div className="font-sans text-xs sm:text-sm text-muted-foreground">
                     {work.role}
                   </div>
                 </div>
               </div>
               <div className="flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-right flex-none">
                 <span>
-                  {formatDate(work.start_date)} - {work.is_current ? "Present" : formatDate(work.end_date)}
+                  {formatDate(work.start_date)} - {work.is_current ? "Sekarang" : formatDate(work.end_date)}
                 </span>
               </div>
             </div>
           </AccordionTrigger>
-          <AccordionContent className="p-0 ml-13 text-xs sm:text-sm text-muted-foreground">
-            {work.description || "No description available."}
+          <AccordionContent className="p-0 ml-12 sm:ml-13 text-xs sm:text-sm text-muted-foreground leading-relaxed pt-1">
+            {work.description || "Tidak ada deskripsi yang tersedia."}
           </AccordionContent>
         </AccordionItem>
       ))}

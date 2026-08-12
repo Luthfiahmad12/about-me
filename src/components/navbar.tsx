@@ -15,9 +15,9 @@ import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 
 const navItems = [
-    { href: "/", icon: Home, label: "Home" },
-    { href: "/projects", icon: FolderGit2, label: "Projects" },
-    { href: "/skills", icon: Code2, label: "Skills" },
+    { href: "/", icon: Home, label: "Beranda" },
+    { href: "/projects", icon: FolderGit2, label: "Proyek" },
+    { href: "/skills", icon: Code2, label: "Keahlian" },
 ]
 
 export default function Navbar() {
@@ -65,7 +65,7 @@ export default function Navbar() {
                             <ModeToggle className="cursor-pointer h-full w-full rounded-full" />
                         </TooltipTrigger>
                         <TooltipContent>
-                            <p>Theme</p>
+                            <p>Tema</p>
                         </TooltipContent>
                     </Tooltip>
                 </DockIcon>

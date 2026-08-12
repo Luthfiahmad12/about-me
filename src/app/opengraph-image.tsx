@@ -1,32 +1,50 @@
- 
-import { ImageResponse } from "next/og";
-import { DATA } from "@/data/resume";
+import { ImageResponse } from "next/og"
+import { DATA } from "@/data/resume"
+import fs from "fs/promises"
+import path from "path"
 
-export const runtime = "edge";
-
-export const alt = DATA.name;
+export const alt = DATA.name
 export const size = {
     width: 1200,
     height: 630,
-};
-export const contentType = "image/png";
+}
+export const contentType = "image/png"
 
 const getFontData = async () => {
     try {
-        const [cabinetGrotesk, clashDisplay] = await Promise.all([
-            fetch(
-                new URL("../../public/fonts/CabinetGrotesk-Medium.ttf", import.meta.url)
-            ).then((res) => res.arrayBuffer()),
-            fetch(
-                new URL("../../public/fonts/ClashDisplay-Semibold.ttf", import.meta.url)
-            ).then((res) => res.arrayBuffer()),
-        ]);
-        return { cabinetGrotesk, clashDisplay };
+        const cabinetGroteskPath = path.join(process.cwd(), "public/fonts/CabinetGrotesk-Medium.ttf")
+        const clashDisplayPath = path.join(process.cwd(), "public/fonts/ClashDisplay-Semibold.ttf")
+
+        const [cabinetGroteskBuffer, clashDisplayBuffer] = await Promise.all([
+            fs.readFile(cabinetGroteskPath),
+            fs.readFile(clashDisplayPath),
+        ])
+
+        return {
+            cabinetGrotesk: cabinetGroteskBuffer.buffer.slice(
+                cabinetGroteskBuffer.byteOffset,
+                cabinetGroteskBuffer.byteOffset + cabinetGroteskBuffer.byteLength,
+            ) as ArrayBuffer,
+            clashDisplay: clashDisplayBuffer.buffer.slice(
+                clashDisplayBuffer.byteOffset,
+                clashDisplayBuffer.byteOffset + clashDisplayBuffer.byteLength,
+            ) as ArrayBuffer,
+        }
     } catch (error) {
-        console.error("Failed to load fonts:", error);
-        return null;
+        console.error("Failed to load fonts:", error)
+        return null
     }
-};
+}
+
+const getAvatarBase64 = async () => {
+    try {
+        const meJpgPath = path.join(process.cwd(), "public/me.jpg")
+        const avatarBuffer = await fs.readFile(meJpgPath)
+        return `data:image/jpeg;base64,${avatarBuffer.toString("base64")}`
+    } catch {
+        return null
+    }
+}
 
 const styles = {
     outerWrapper: {
@@ -103,23 +121,23 @@ const styles = {
         marginBottom: "32px",
         textWrap: "balance",
     },
-} as const;
+} as const
 
 export default async function Image() {
     try {
-        const fontData = await getFontData();
-        const imageUrl = DATA.avatarUrl
-            ? new URL(DATA.avatarUrl, DATA.url).toString()
-            : undefined;
+        const [fontData, avatarBase64] = await Promise.all([
+            getFontData(),
+            getAvatarBase64(),
+        ])
 
         return new ImageResponse(
             (
                 <div style={styles.outerWrapper}>
                     <div style={styles.middleWrapper}>
                         <div style={styles.wrapper}>
-                            {imageUrl && (
+                            {avatarBase64 && (
                                 <div style={styles.imageSection}>
-                                    <img src={imageUrl} alt={DATA.name} style={styles.image} />
+                                    <img src={avatarBase64} alt={DATA.name} style={styles.image} />
                                 </div>
                             )}
                             <div style={styles.mainContainer}>
@@ -156,17 +174,15 @@ export default async function Image() {
                         },
                     ]
                     : undefined,
-            }
-        );
+            },
+        )
     } catch (error) {
         console.error("Error generating OpenGraph image:", error);
         return new Response(
             `Failed to generate image: ${error instanceof Error ? error.message : "Unknown error"}`,
             {
                 status: 500,
-            }
-        );
+            },
+        )
     }
 }
-
-

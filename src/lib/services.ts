@@ -9,6 +9,7 @@ import type {
     Project,
     Experience,
     Certificate,
+    Education,
 } from "@/types/portfolio"
 
 import { PROFILE_DATA } from "@/data/profile"
@@ -16,6 +17,7 @@ import { SKILLS_DATA } from "@/data/skills"
 import { PROJECTS_DATA } from "@/data/projects"
 import { EXPERIENCES_DATA } from "@/data/experience"
 import { CERTIFICATES_DATA } from "@/data/certificates"
+import { EDUCATION_DATA } from "@/data/education"
 
 /**
  * Get profile data
@@ -65,4 +67,11 @@ export async function getExperiences(): Promise<Experience[]> {
  */
 export async function getCertificates(): Promise<Certificate[]> {
     return CERTIFICATES_DATA
+}
+
+/**
+ * Get education history
+ */
+export function getEducation(): Education[] {
+    return EDUCATION_DATA
 }

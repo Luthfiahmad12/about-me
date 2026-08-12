@@ -26,7 +26,7 @@ export interface Skill {
     id: number
     name: string
     category: string
-    level: string | null
+    level?: string | null
     icon_url: string | null
     created_at: string
 }
@@ -67,4 +67,14 @@ export interface Certificate {
     credential_url: string | null
     image_url: string | null
     created_at: string
+}
+
+export interface Education {
+    id: number
+    school: string
+    degree: string
+    period: string
+    link?: string | null
+    logo_url?: string | null
+    description?: string | null
 }

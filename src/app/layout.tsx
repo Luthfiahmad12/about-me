@@ -6,7 +6,7 @@ import { DATA } from "@/data/resume"
 import { cn } from "@/lib/utils"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
-import "./globals.css"
+import "@/app/globals.css"
 import { FlickeringGrid } from "@/components/magicui/flickering-grid"
 
 const geist = Geist({
@@ -24,10 +24,15 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
     metadataBase: new URL(DATA.url),
     title: {
-        default: DATA.name,
+        default: DATA.title,
         template: `%s | ${DATA.name}`,
     },
     description: DATA.description,
+    icons: {
+        icon: "/logo.svg",
+        shortcut: "/logo.svg",
+        apple: "/logo.svg",
+    },
     openGraph: {
         title: `${DATA.name}`,
         description: DATA.description,
@@ -73,7 +78,7 @@ export default function RootLayout({
             >
                 <ThemeProvider attribute="class" defaultTheme="light">
                     <TooltipProvider delayDuration={0}>
-                        {/* <div className="absolute inset-0 top-0 left-0 right-0 h-25 overflow-hidden z-0">
+                        <div className="absolute inset-0 top-0 left-0 right-0 h-25 overflow-hidden z-0 pointer-events-none">
                             <FlickeringGrid
                                 className="h-full w-full"
                                 squareSize={2}
@@ -85,8 +90,8 @@ export default function RootLayout({
                                         "linear-gradient(to bottom, black, transparent)",
                                 }}
                             />
-                        </div> */}
-                        <div className="relative z-10 max-w-2xl mx-auto py-12 pb-24 sm:py-24 px-6">
+                        </div>
+                        <div className="relative z-10 max-w-3xl mx-auto py-8 pb-24 sm:py-16 px-4 sm:px-6">
                             {children}
                             <Footer />
                         </div>
