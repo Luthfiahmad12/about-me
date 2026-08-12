@@ -1,0 +1,78 @@
+-- ENABLE EXTENSION (Jika belum aktif)
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+-- =============================================================================
+-- DEPRECATED: Tabel di bawah ini TIDAK dipakai oleh aplikasi.
+-- Data profile & skills sekarang statis dari src/data/resume.tsx.
+-- Boleh di-drop dari Supabase jika tidak diperlukan untuk keperluan lain.
+-- =============================================================================
+
+-- 1. TABEL PROFILES (DEPRECATED - tidak dipakai)
+CREATE TABLE IF NOT EXISTS profiles (
+  id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
+  full_name text NOT NULL,
+  title text,
+  about_me text,
+  email text UNIQUE,
+  phone text,
+  location text,
+  avatar_url text,
+  resume_url text,
+  social_links jsonb DEFAULT '{"github": "", "linkedin": "", "twitter": "", "instagram": ""}'::jsonb,
+  updated_at timestamptz DEFAULT now()
+);
+
+-- 2. TABEL SKILLS (DEPRECATED - tidak dipakai)
+CREATE TABLE IF NOT EXISTS skills (
+  id int8 GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  name text NOT NULL,
+  category text NOT NULL, -- Contoh: 'Frontend', 'Backend', 'Tools'
+  level text, -- Contoh: 'Beginner', 'Intermediate', 'Advanced'
+  icon_url text, -- Link asset icon
+  created_at timestamptz DEFAULT now()
+);
+
+-- =============================================================================
+-- TABEL AKTIF (digunakan oleh aplikasi)
+-- =============================================================================
+
+-- 3. TABEL PROJECTS
+CREATE TABLE projects (
+  id int8 GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  title text NOT NULL,
+  slug text UNIQUE NOT NULL, -- Untuk URL: portfolio.com/project/my-app
+  description text,
+  content text, -- Markdown untuk detail project
+  image_url text,
+  tech_stack text[] DEFAULT '{}', -- Menggunakan Array PostgreSQL
+  demo_url text,
+  repo_url text,
+  is_featured boolean DEFAULT false,
+  created_at timestamptz DEFAULT now()
+);
+
+-- 4. TABEL EXPERIENCE
+CREATE TABLE experience (
+  id int8 GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  company_name text NOT NULL,
+  role text NOT NULL,
+  location text,
+  start_date date NOT NULL,
+  end_date date, -- Kosong jika masih bekerja
+  is_current boolean DEFAULT false,
+  description text, -- Bisa berupa JSON atau text panjang
+  created_at timestamptz DEFAULT now()
+);
+
+-- 5. TABEL CERTIFICATES
+CREATE TABLE certificates (
+  id int8 GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  title text NOT NULL,
+  issuing_organization text NOT NULL,
+  issue_date date,
+  expiry_date date,
+  credential_id text,
+  credential_url text,
+  image_url text,
+  created_at timestamptz DEFAULT now()
+);
