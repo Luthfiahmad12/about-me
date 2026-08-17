@@ -20,7 +20,7 @@ export const PROFILE_DATA: Profile = {
 
 export const SITE_CONFIG = {
     name: "Achmad Luthfi Afif",
-    title: "Portfolio & Resume",
+    title: "About Me",
     url: "https://luthfi-cv.vercel.app",
-    description: "Portfolio & Resume of Achmad Luthfi Afif - Software Engineer and Full-Stack Developer.",
+    description: "About Me - Portfolio & Resume of Achmad Luthfi Afif, Software Engineer and Full-Stack Developer.",
 }
