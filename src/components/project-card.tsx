@@ -29,7 +29,7 @@ interface Props {
     title: string
     href?: string
     description: string
-    dates: string
+    dates?: string
     tags: readonly string[]
     link?: string
     image?: string
@@ -120,9 +120,11 @@ export function ProjectCard({
                                 {title}
                             </h3>
                         </Link>
-                        <time className="text-xs font-medium text-muted-foreground">
-                            {dates}
-                        </time>
+                        {dates && (
+                            <time className="text-xs font-medium text-muted-foreground">
+                                {dates}
+                            </time>
+                        )}
                     </div>
                     <Link
                         href={href || "#"}

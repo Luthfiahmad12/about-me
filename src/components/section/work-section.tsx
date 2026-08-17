@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { ChevronDown, ChevronRight, Code2, Laptop, Terminal, Monitor } from "lucide-react";
+import { ChevronDown, ChevronRight, Code2, Laptop, Terminal, Monitor, Hospital } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Experience } from "@/types/portfolio";
 
@@ -17,6 +17,9 @@ function getWorkIcon(companyName: string, role: string) {
   const lowerCompany = companyName.toLowerCase();
   const lowerRole = role.toLowerCase();
 
+  if (lowerCompany.includes("rumah sakit") || lowerCompany.includes("hospital") || lowerCompany.includes("simrs")) {
+    return <Hospital className="size-4 sm:size-5 text-primary" />;
+  }
   if (lowerCompany.includes("adarma") || lowerRole.includes("programmer")) {
     return <Code2 className="size-4 sm:size-5 text-primary" />;
   }

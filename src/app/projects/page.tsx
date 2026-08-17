@@ -18,15 +18,6 @@ const BLUR_FADE_DELAY = 0.04
 export default async function ProjectsPage() {
     const projects = await getProjects()
 
-    // Format date untuk ditampilkan dalam Bahasa Indonesia
-    const formatDate = (dateString: string) => {
-        const date = new Date(dateString)
-        return date.toLocaleDateString("id-ID", {
-            year: "numeric",
-            month: "short",
-        })
-    }
-
     return (
         <main className="min-h-dvh flex flex-col gap-14 relative">
             <section id="projects-header">
@@ -60,7 +51,7 @@ export default async function ProjectsPage() {
                                     icon: <Icons.globe className="size-3" />,
                                     type: "Situs Web",
                                     href: project.demo_url,
-                                })
+                                    })
                             }
                             if (project.repo_url) {
                                 links.push({
@@ -80,7 +71,6 @@ export default async function ProjectsPage() {
                                         href={`/projects/${project.slug}`}
                                         title={project.title}
                                         description={project.description || ""}
-                                        dates={formatDate(project.created_at)}
                                         tags={project.tech_stack}
                                         image={project.image_url || ""}
                                         video=""

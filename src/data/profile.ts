@@ -3,13 +3,12 @@ import type { Profile } from "@/types/portfolio"
 export const PROFILE_DATA: Profile = {
     id: "luthfi-profile",
     full_name: "Achmad Luthfi Afif",
-    title: "Software Engineer & Full Stack Developer",
+    title: "Software Engineer",
     about_me:
-        "Saya merupakan lulusan Program Studi Manajemen Informatika dengan pengalaman dalam pengembangan aplikasi web serta keterampilan sebagai Full Stack Developer sejak tahun 2020, menguasai tech stack frontend modern (React, Next.js, TypeScript) dan backend (PHP/Laravel, Node.js). Antusias dalam mempelajari teknologi baru seperti modern JavaScript, modern PHP, dan artificial intelligence. Berambisi berkarier sebagai IT Developer yang mampu memberikan solusi efektif bagi perusahaan.",
+        "Membangun produk digital yang berdampak nyata adalah passion saya. Dengan pengalaman lebih dari 3 tahun, spesialisasi saya ada pada *modern web ecosystem* (React, Next.js, TypeScript). Saya selalu mengeksplorasi batas inovasi, terutama memadukan AI dengan web development. Bagi saya, *engineering* adalah seni memecahkan masalah kompleks menjadi solusi yang simpel dan elegan.",
     email: "luthfiafif625@gmail.com",
-    phone: "+62 821 3868 2214",
-    location: "Wonosobo, Jawa Tengah, Indonesia",
-    avatar_url: "/me.jpg",
+    location: "Jawa Tengah, Indonesia",
+    avatar_url: "/loods-avatar.jpg",
     resume_url: null,
     social_links: {
         github: "https://github.com/Luthfiahmad12",
@@ -17,4 +16,11 @@ export const PROFILE_DATA: Profile = {
         whatsapp: "https://wa.me/6282138682214",
     },
     updated_at: new Date().toISOString(),
+}
+
+export const SITE_CONFIG = {
+    name: "Achmad Luthfi Afif",
+    title: "Portfolio & Resume",
+    url: "https://luthfi-cv.vercel.app",
+    description: "Portfolio & Resume of Achmad Luthfi Afif - Software Engineer and Full-Stack Developer.",
 }

@@ -1,9 +1,9 @@
 import { ImageResponse } from "next/og"
-import { DATA } from "@/data/resume"
+import { SITE_CONFIG } from "@/data/profile"
 import fs from "fs/promises"
 import path from "path"
 
-export const alt = DATA.name
+export const alt = SITE_CONFIG.name
 export const size = {
     width: 1200,
     height: 630,
@@ -38,7 +38,7 @@ const getFontData = async () => {
 
 const getAvatarBase64 = async () => {
     try {
-        const meJpgPath = path.join(process.cwd(), "public/me.jpg")
+        const meJpgPath = path.join(process.cwd(), "public/loods-avatar.jpg")
         const avatarBuffer = await fs.readFile(meJpgPath)
         return `data:image/jpeg;base64,${avatarBuffer.toString("base64")}`
     } catch {
@@ -137,13 +137,13 @@ export default async function Image() {
                         <div style={styles.wrapper}>
                             {avatarBase64 && (
                                 <div style={styles.imageSection}>
-                                    <img src={avatarBase64} alt={DATA.name} style={styles.image} />
+                                    <img src={avatarBase64} alt={SITE_CONFIG.name} style={styles.image} />
                                 </div>
                             )}
                             <div style={styles.mainContainer}>
-                                <div style={styles.title}>{DATA.name}</div>
-                                {DATA.description && (
-                                    <div style={styles.description}>{DATA.description}</div>
+                                <div style={styles.title}>{SITE_CONFIG.name}</div>
+                                {SITE_CONFIG.description && (
+                                    <div style={styles.description}>{SITE_CONFIG.description}</div>
                                 )}
                             </div>
                         </div>

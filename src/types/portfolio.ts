@@ -8,7 +8,6 @@ export interface Profile {
     title: string | null
     about_me: string | null
     email: string | null
-    phone: string | null
     location: string | null
     avatar_url: string | null
     resume_url: string | null

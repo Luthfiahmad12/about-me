@@ -51,8 +51,8 @@ export default async function SkillsPage() {
                 </div>
             </section>
 
-            {/* Non-grouped Fluid Skills Wrap */}
-            <section id="skills-grid">
+            {/* Skills Content (Grouped by Level) */}
+            <section id="skills-grid" className="flex flex-col gap-10">
                 {skills.length === 0 ? (
                     <BlurFade delay={BLUR_FADE_DELAY * 3}>
                         <p className="text-muted-foreground text-center">
@@ -60,24 +60,85 @@ export default async function SkillsPage() {
                         </p>
                     </BlurFade>
                 ) : (
-                    <div className="flex flex-wrap justify-center gap-3">
-                        {skills.map((skill, id) => (
-                            <BlurFade
-                                key={skill.id}
-                                delay={BLUR_FADE_DELAY * 3 + id * 0.04}
-                            >
-                                <div className="group border bg-card border-border rounded-xl h-12 px-5 flex items-center gap-3 shadow-sm hover:border-primary/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 cursor-default">
-                                    <SkillIcon
-                                        name={skill.name}
-                                        className="size-5 shrink-0 transition-transform duration-200 group-hover:scale-110"
-                                    />
-                                    <span className="text-foreground text-sm font-semibold">
-                                        {skill.name}
+                    <>
+                        {/* Core Stack */}
+                        <div className="flex flex-col gap-4">
+                            <BlurFade delay={BLUR_FADE_DELAY * 2.5}>
+                                <div className="flex items-center gap-2">
+                                    <h2 className="text-xl font-bold tracking-tight">
+                                        Keahlian Utama (Core Stack)
+                                    </h2>
+                                    <span className="text-[11px] font-medium bg-primary/10 text-primary px-2 py-0.5 rounded-full border border-primary/20">
+                                        Production Ready
                                     </span>
                                 </div>
+                                <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
+                                    Teknologi yang saya gunakan secara aktif untuk membangun aplikasi web produksi yang cepat dan andal.
+                                </p>
                             </BlurFade>
-                        ))}
-                    </div>
+
+                            <div className="flex flex-wrap gap-2.5 pt-1">
+                                {skills
+                                    .filter((s) => s.level === "Core" || !s.level)
+                                    .map((skill, id) => (
+                                        <BlurFade
+                                            key={skill.id}
+                                            delay={BLUR_FADE_DELAY * 3 + id * 0.03}
+                                        >
+                                            <div className="group border bg-card border-border rounded-xl h-11 px-4 flex items-center gap-2.5 shadow-sm hover:border-primary/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 cursor-default">
+                                                <SkillIcon
+                                                    name={skill.name}
+                                                    className="size-4 sm:size-5 shrink-0 transition-transform duration-200 group-hover:scale-110"
+                                                />
+                                                <span className="text-foreground text-xs sm:text-sm font-semibold">
+                                                    {skill.name}
+                                                </span>
+                                            </div>
+                                        </BlurFade>
+                                    ))}
+                            </div>
+                        </div>
+
+                        {/* Exploring / Familiar Stack */}
+                        {skills.some((s) => s.level === "Exploring") && (
+                            <div className="flex flex-col gap-4">
+                                <BlurFade delay={BLUR_FADE_DELAY * 4}>
+                                    <div className="flex items-center gap-2">
+                                        <h2 className="text-xl font-bold tracking-tight">
+                                            Eksplorasi & Familiar
+                                        </h2>
+                                        <span className="text-[11px] font-medium bg-muted text-muted-foreground px-2 py-0.5 rounded-full border border-border">
+                                            Learning & Research
+                                        </span>
+                                    </div>
+                                    <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
+                                        Teknologi yang sedang saya pelajari, eksplorasi dalam eksperimen kode, atau pahami konsep dasarnya.
+                                    </p>
+                                </BlurFade>
+
+                                <div className="flex flex-wrap gap-2.5 pt-1">
+                                    {skills
+                                        .filter((s) => s.level === "Exploring")
+                                        .map((skill, id) => (
+                                            <BlurFade
+                                                key={skill.id}
+                                                delay={BLUR_FADE_DELAY * 4.5 + id * 0.03}
+                                            >
+                                                <div className="group border bg-card/60 border-border/80 rounded-xl h-11 px-4 flex items-center gap-2.5 shadow-sm hover:border-primary/40 hover:bg-card hover:-translate-y-0.5 transition-all duration-200 cursor-default">
+                                                    <SkillIcon
+                                                        name={skill.name}
+                                                        className="size-4 sm:size-5 shrink-0 opacity-80 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110"
+                                                    />
+                                                    <span className="text-muted-foreground group-hover:text-foreground text-xs sm:text-sm font-medium transition-colors">
+                                                        {skill.name}
+                                                    </span>
+                                                </div>
+                                            </BlurFade>
+                                        ))}
+                                </div>
+                            </div>
+                        )}
+                    </>
                 )}
             </section>
 

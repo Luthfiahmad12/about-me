@@ -39,16 +39,6 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         notFound()
     }
 
-    // Format date untuk ditampilkan dalam Bahasa Indonesia
-    const formatDate = (dateString: string) => {
-        const date = new Date(dateString)
-        return date.toLocaleDateString("id-ID", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-        })
-    }
-
     const BLUR_FADE_DELAY = 0.04
 
     return (
@@ -65,18 +55,15 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
 
             {/* Project Header */}
             <section className="flex flex-col gap-4">
-                <BlurFade delay={BLUR_FADE_DELAY * 2}>
-                    <div className="flex flex-wrap items-center gap-2">
-                        {project.is_featured && (
+                {project.is_featured && (
+                    <BlurFade delay={BLUR_FADE_DELAY * 2}>
+                        <div className="flex flex-wrap items-center gap-2">
                             <Badge variant="default" className="bg-primary">
                                 Unggulan
                             </Badge>
-                        )}
-                        <time className="text-sm text-muted-foreground">
-                            {formatDate(project.created_at)}
-                        </time>
-                    </div>
-                </BlurFade>
+                        </div>
+                    </BlurFade>
+                )}
 
                 <BlurFade delay={BLUR_FADE_DELAY * 3}>
                     <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl lg:text-5xl">

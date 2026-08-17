@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next"
-import { DATA } from "@/data/resume"
+import { SITE_CONFIG } from "@/data/profile"
 
 export default function robots(): MetadataRoute.Robots {
-    const baseUrl = DATA.url || "https://luthfi-ahmad.vercel.app"
+    const baseUrl = SITE_CONFIG.url || "https://luthfi-ahmad.vercel.app"
 
     return {
         rules: {

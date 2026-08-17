@@ -10,7 +10,7 @@ export const EXPERIENCES_DATA: Experience[] = [
         end_date: "2026-05-30",
         is_current: false,
         description:
-            "IT Programmer (Planning, Develop, Deployment) dalam pembuatan produk aplikasi berbasis website. Mengembangkan aplikasi web berbasis backend PHP (Laravel Framework) dan frontend modern.",
+            "Bertanggung jawab penuh atas siklus pengembangan aplikasi web (planning, development, deployment). Membangun arsitektur backend REST API berbasis Laravel yang scalable, mengintegrasikan frontend modern, serta memastikan keandalan sistem di lingkungan produksi.",
         created_at: "2025-06-01T00:00:00.000Z",
     },
     {
@@ -22,7 +22,7 @@ export const EXPERIENCES_DATA: Experience[] = [
         end_date: null,
         is_current: true,
         description:
-            "Mengembangkan aplikasi web menggunakan teknologi modern sesuai dengan kebutuhan klien. Penulisan clean code dan struktur data menggunakan pendekatan Repository Pattern dan Design Pattern.",
+            "Merancang dan mengembangkan solusi aplikasi web end-to-end sesuai kebutuhan klien. Menerapkan standar clean code dengan Repository & Design Pattern, perancangan database yang optimal, serta integrasi antarmuka interaktif dan responsif.",
         created_at: "2022-12-01T00:00:00.000Z",
     },
     {
@@ -34,7 +34,7 @@ export const EXPERIENCES_DATA: Experience[] = [
         end_date: "2022-12-31",
         is_current: false,
         description:
-            "Mengelola data penjualan sesuai dengan pedoman. Melakukan Digital Branding dan Digital Marketing. Pembuatan sistem informasi penjualan dan pengolahan data.",
+            "Mengembangkan sistem informasi internal untuk otomatisasi proses bisnis, mengelola integritas dan analitik data penjualan, serta memastikan kelancaran operasional infrastruktur IT dan strategi branding digital.",
         created_at: "2022-07-01T00:00:00.000Z",
     },
 ]

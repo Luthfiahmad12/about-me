@@ -10,14 +10,7 @@ import Markdown from "react-markdown"
 import WorkSection from "@/components/section/work-section"
 import EducationSection from "@/components/section/education-section"
 import { getProfile, getExperiences, getEducation } from "@/lib/services"
-import {
-    Mail,
-    Phone,
-    Github,
-    Linkedin,
-    MapPin,
-    MessageCircle,
-} from "lucide-react"
+import { Mail, Phone, Github, Linkedin, MessageCircle } from "lucide-react"
 import Link from "next/link"
 
 const BLUR_FADE_DELAY = 0.04
@@ -27,23 +20,12 @@ export default async function Page() {
     const experiences = await getExperiences()
     const education = getEducation()
 
-    // Get initials from full name
-    const initials = profile.full_name
-        .split(" ")
-        .map((n) => n[0])
-        .join("")
-        .toUpperCase()
-
-    // Get first name
-    const nameParts = profile.full_name.split(" ")
-    const firstName = nameParts.length > 1 ? nameParts[1] : nameParts[0]
-
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "Person",
         name: profile.full_name,
         url: "https://luthfi-cv.vercel.app",
-        image: "https://luthfi-cv.vercel.app/me.jpg",
+        image: "https://luthfi-cv.vercel.app/loods-avatar.jpg",
         jobTitle: profile.title || "Software Engineer",
         address: {
             "@type": "PostalAddress",
@@ -66,32 +48,23 @@ export default async function Page() {
             {/* Hero Section */}
             <section id="hero">
                 <div className="mx-auto w-full max-w-3xl space-y-8">
-                    <div className="gap-4 gap-y-6 flex flex-col-reverse md:flex-row items-start md:items-center justify-between">
-                        <div className="gap-3 flex flex-col flex-1">
+                    <div className="flex flex-col items-center justify-center text-center">
+                        <div className="gap-3 flex flex-col items-center">
                             <BlurFadeText
                                 delay={BLUR_FADE_DELAY}
-                                className="text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl"
+                                className="text-center text-2xl font-semibold tracking-tighter sm:text-3xl lg:text-4xl"
                                 yOffset={8}
-                                text={`Halo, Saya ${firstName} 👋`}
+                                text={profile.full_name}
                             />
                             <BlurFadeText
-                                className="text-muted-foreground md:text-lg lg:text-xl font-medium"
+                                className="text-center text-muted-foreground md:text-lg lg:text-xl font-medium"
                                 delay={BLUR_FADE_DELAY * 1.5}
                                 text={profile.title || "Software Engineer"}
                             />
 
-                            {profile.location && (
-                                <BlurFade delay={BLUR_FADE_DELAY * 2}>
-                                    <div className="flex items-center gap-1.5 text-xs sm:text-sm text-muted-foreground pt-1">
-                                        <MapPin className="size-3.5 text-primary" />
-                                        <span>{profile.location}</span>
-                                    </div>
-                                </BlurFade>
-                            )}
-
                             {/* Contact Badges / Social Links */}
                             <BlurFade delay={BLUR_FADE_DELAY * 2.5}>
-                                <div className="flex items-center gap-3 pt-2">
+                                <div className="flex items-center justify-center gap-3 pt-2">
                                     {profile.email && (
                                         <Tooltip>
                                             <TooltipTrigger asChild>
@@ -105,22 +78,6 @@ export default async function Page() {
                                             </TooltipTrigger>
                                             <TooltipContent>
                                                 <p>{profile.email}</p>
-                                            </TooltipContent>
-                                        </Tooltip>
-                                    )}
-                                    {profile.phone && (
-                                        <Tooltip>
-                                            <TooltipTrigger asChild>
-                                                <Link
-                                                    href={`tel:${profile.phone}`}
-                                                    className="p-2.5 rounded-full border border-border bg-background hover:bg-accent hover:text-accent-foreground transition-all duration-200 hover:scale-110 shadow-sm"
-                                                    aria-label="Phone"
-                                                >
-                                                    <Phone className="size-4" />
-                                                </Link>
-                                            </TooltipTrigger>
-                                            <TooltipContent>
-                                                <p>{profile.phone}</p>
                                             </TooltipContent>
                                         </Tooltip>
                                     )}
@@ -190,29 +147,6 @@ export default async function Page() {
                                 </div>
                             </BlurFade>
                         </div>
-
-                        {/* Profile Avatar / Photo */}
-                        <BlurFade
-                            delay={BLUR_FADE_DELAY * 2}
-                            className="shrink-0"
-                        >
-                            <div className="relative group">
-                                <Avatar className="size-20 sm:size-24 md:size-32 lg:size-36 border-2 border-border shadow-xl ring-4 ring-muted overflow-hidden transition-transform duration-300 group-hover:scale-105">
-                                    <AvatarImage
-                                        alt={profile.full_name}
-                                        src={profile.avatar_url || "/me.jpg"}
-                                        className="object-cover size-full"
-                                    />
-                                    <AvatarFallback className="text-2xl sm:text-3xl font-bold bg-primary/10 text-primary">
-                                        {initials}
-                                    </AvatarFallback>
-                                </Avatar>
-                                <span
-                                    className="absolute bottom-1.5 right-1.5 size-4 sm:size-5 bg-emerald-500 border-2 border-background rounded-full"
-                                    title="Aktif"
-                                />
-                            </div>
-                        </BlurFade>
                     </div>
                 </div>
             </section>

@@ -1,9 +1,9 @@
 import type { MetadataRoute } from "next"
+import { SITE_CONFIG } from "@/data/profile"
 import { getProjects } from "@/lib/services"
-import { DATA } from "@/data/resume"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const baseUrl = DATA.url || "https://luthfi-ahmad.vercel.app"
+    const baseUrl = SITE_CONFIG.url || "https://luthfi-ahmad.vercel.app"
     const projects = await getProjects()
 
     const projectUrls = projects.map((project) => ({

@@ -2,7 +2,7 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { ThemeProvider } from "@/components/theme-provider"
 import { TooltipProvider } from "@/components/ui/tooltip"
-import { DATA } from "@/data/resume"
+import { SITE_CONFIG } from "@/data/profile"
 import { cn } from "@/lib/utils"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
@@ -22,22 +22,22 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-    metadataBase: new URL(DATA.url),
+    metadataBase: new URL(SITE_CONFIG.url),
     title: {
-        default: DATA.title,
-        template: `%s | ${DATA.name}`,
+        default: SITE_CONFIG.title,
+        template: `%s | ${SITE_CONFIG.name}`,
     },
-    description: DATA.description,
+    description: SITE_CONFIG.description,
     icons: {
         icon: "/logo.svg",
         shortcut: "/logo.svg",
         apple: "/logo.svg",
     },
     openGraph: {
-        title: `${DATA.name}`,
-        description: DATA.description,
-        url: DATA.url,
-        siteName: `${DATA.name}`,
+        title: `${SITE_CONFIG.name}`,
+        description: SITE_CONFIG.description,
+        url: SITE_CONFIG.url,
+        siteName: `${SITE_CONFIG.name}`,
         locale: "en_US",
         type: "website",
     },
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
         },
     },
     twitter: {
-        title: `${DATA.name}`,
+        title: `${SITE_CONFIG.name}`,
         card: "summary_large_image",
     },
     verification: {
